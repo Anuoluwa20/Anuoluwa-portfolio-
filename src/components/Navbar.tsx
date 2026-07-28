@@ -47,11 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         
         {/* Left: Avatar & Profile Info */}
         <div className="flex items-center gap-2.5 pl-1">
-          <div 
-            className="relative group cursor-pointer" 
-            onClick={onChangeAvatar || onOpenProfileEdit}
-            title="Click to Change Profile Photo"
-          >
+          <div className="relative group">
             <img
               src={profile.avatarUrl}
               alt={profile.name}
@@ -61,13 +57,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             {profile.availableForHire && (
               <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-600 border-2 border-[#EFECE6] rounded-full" title="Available for hire" />
             )}
-            <div className="absolute inset-0 bg-[#1A1A1A]/60 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition shadow-sm">
-              <Camera className="w-4 h-4 text-amber-400" />
-            </div>
           </div>
           
-          <div className="hidden sm:block cursor-pointer" onClick={onOpenProfileEdit}>
-            <h1 className="text-sm font-bold text-[#1A1A1A] leading-tight tracking-tight hover:underline">{profile.name}</h1>
+          <div className="hidden sm:block">
+            <h1 className="text-sm font-bold text-[#1A1A1A] leading-tight tracking-tight">{profile.name}</h1>
             <p className="text-xs text-[#8E8E8E] font-medium">{profile.role}</p>
           </div>
         </div>
@@ -153,40 +146,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <Calendar className="w-3.5 h-3.5 text-amber-400" />
             <span>Book a call</span>
-          </button>
-
-          {/* Sync / Backup Data Modal Button */}
-          {onOpenSyncModal && (
-            <button
-              onClick={onOpenSyncModal}
-              className="p-2 rounded-full bg-[#F5F2ED] hover:bg-[#E5E1D8] text-[#1A1A1A] border border-[#D8D4CC] transition cursor-pointer"
-              title="Backup & Sync Data JSON"
-            >
-              <Database className="w-3.5 h-3.5 text-amber-700" />
-            </button>
-          )}
-
-          {/* Edit Mode Toggle Button */}
-          <button
-            onClick={onToggleEditMode}
-            className={`px-3 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer border ${
-              isEditMode
-                ? 'bg-amber-100 text-amber-900 border-amber-300 hover:bg-amber-200'
-                : 'bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200'
-            }`}
-            title="Toggle Edit Mode to upload images & add subtext fields"
-          >
-            {isEditMode ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-amber-700" />
-                <span className="hidden sm:inline">Editing ON</span>
-              </>
-            ) : (
-              <>
-                <Pencil className="w-3.5 h-3.5 text-neutral-600" />
-                <span className="hidden sm:inline">Edit Portfolio</span>
-              </>
-            )}
           </button>
 
           {/* Mobile Menu Toggle */}

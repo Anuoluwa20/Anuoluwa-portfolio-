@@ -3,6 +3,7 @@ import { PortfolioData, UIWork, CaseStudy, ServiceCard, Testimonial, ToolItem, P
 import { loadPortfolioData, savePortfolioData, resetPortfolioData, saveToCodebase } from './lib/storage';
 import { Navbar } from './components/Navbar';
 import { HeroServices } from './components/HeroServices';
+import { SlidingCarousel } from './components/SlidingCarousel';
 import { ToolsSection } from './components/ToolsSection';
 import { CaseStudiesSection } from './components/CaseStudiesSection';
 import { UIWorksSection } from './components/UIWorksSection';
@@ -299,14 +300,10 @@ export default function App() {
       {/* Floating Pill Navbar */}
       <Navbar
         profile={data.profile}
-        isEditMode={isEditMode}
-        onToggleEditMode={() => setIsEditMode(!isEditMode)}
+        isEditMode={false}
+        onToggleEditMode={() => {}}
         onOpenBookCall={() => setContactModalOpen(true)}
-        onOpenProfileEdit={() => handleOpenEdit('profile', data.profile)}
-        onChangeAvatar={() =>
-          handleOpenChangeImage('profile', null, data.profile.avatarUrl, 'Change Profile Photo')
-        }
-        onOpenSyncModal={() => setSyncModalOpen(true)}
+        onOpenProfileEdit={() => {}}
       />
 
       {/* Hero & Specialization Cards */}
@@ -320,61 +317,55 @@ export default function App() {
         onOpenBookCall={() => setContactModalOpen(true)}
       />
 
+      {/* Infinite Horizontal Sliding Carousel Showcase */}
+      <SlidingCarousel
+        items={[...data.uiWorks, ...data.caseStudies]}
+        onInspectItem={(item) => setInspectItem(item)}
+      />
+
       {/* Selected Case Studies Deck */}
       <CaseStudiesSection
         caseStudies={data.caseStudies}
-        isEditMode={isEditMode}
-        onEditCaseStudy={(cs) => handleOpenEdit('caseStudy', cs)}
-        onAddCaseStudy={() => handleOpenEdit('caseStudy', null)}
-        onDeleteCaseStudy={(id) => handleDeleteItem('caseStudy', id)}
+        isEditMode={false}
+        onEditCaseStudy={() => {}}
+        onAddCaseStudy={() => {}}
+        onDeleteCaseStudy={() => {}}
         onOpenDetailModal={(item) => setInspectItem(item)}
-        onChangeImage={(cs) =>
-          handleOpenChangeImage('caseStudy', cs.id, cs.imageUrl, `Change Image: ${cs.title}`)
-        }
       />
 
       {/* UI Works & Explorations Grid with Category Filters */}
       <UIWorksSection
         uiWorks={data.uiWorks}
-        isEditMode={isEditMode}
-        onEditUIWork={(work) => handleOpenEdit('uiWork', work)}
-        onAddUIWork={() => handleOpenEdit('uiWork', null)}
-        onDeleteUIWork={(id) => handleDeleteItem('uiWork', id)}
+        isEditMode={false}
+        onEditUIWork={() => {}}
+        onAddUIWork={() => {}}
+        onDeleteUIWork={() => {}}
         onInspectUIWork={(work) => setInspectItem(work)}
-        onChangeImage={(work) =>
-          handleOpenChangeImage('uiWork', work.id, work.imageUrl, `Change Image: ${work.title}`)
-        }
       />
 
       {/* About, Career Experience Timeline & 10-Step Process */}
       <AboutExperienceProcess
         onOpenBookCall={() => setContactModalOpen(true)}
-        onChangeAvatar={() =>
-          handleOpenChangeImage('profile', null, data.profile.avatarUrl, 'Change Profile Photo')
-        }
         avatarUrl={data.profile.avatarUrl}
       />
 
       {/* Tools Section */}
       <ToolsSection
         tools={data.tools}
-        isEditMode={isEditMode}
+        isEditMode={false}
         onOpenBookCall={() => setContactModalOpen(true)}
-        onEditTool={(tool) => handleOpenEdit('tool', tool)}
-        onAddTool={() => handleOpenEdit('tool', null)}
-        onDeleteTool={(id) => handleDeleteItem('tool', id)}
+        onEditTool={() => {}}
+        onAddTool={() => {}}
+        onDeleteTool={() => {}}
       />
 
       {/* What Clients Say / Testimonials */}
       <TestimonialsSection
         testimonials={data.testimonials}
-        isEditMode={isEditMode}
-        onEditTestimonial={(t) => handleOpenEdit('testimonial', t)}
-        onAddTestimonial={() => handleOpenEdit('testimonial', null)}
-        onDeleteTestimonial={(id) => handleDeleteItem('testimonial', id)}
-        onChangeImage={(t) =>
-          handleOpenChangeImage('testimonial', t.id, t.avatarUrl, `Change Photo: ${t.authorName}`)
-        }
+        isEditMode={false}
+        onEditTestimonial={() => {}}
+        onAddTestimonial={() => {}}
+        onDeleteTestimonial={() => {}}
       />
 
       {/* Let's Build Something Great CTA */}
@@ -388,13 +379,6 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-medium">
           <p>© {new Date().getFullYear()} {data.profile.name}. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => setIsEditMode(!isEditMode)}
-              className="hover:text-neutral-900 transition underline cursor-pointer"
-            >
-              {isEditMode ? 'View Live Portfolio' : 'Edit Portfolio Mode'}
-            </button>
-            <span>•</span>
             <button
               onClick={() => setContactModalOpen(true)}
               className="hover:text-neutral-900 transition underline cursor-pointer"
@@ -417,60 +401,6 @@ export default function App() {
         onClose={() => setInspectItem(null)}
         onNext={handleInspectNext}
         onPrev={handleInspectPrev}
-        onChangeImage={(item) =>
-          handleOpenChangeImage(
-            'companyName' in item ? 'caseStudy' : 'uiWork',
-            item.id,
-            item.imageUrl,
-            `Change Image: ${item.title}`
-          )
-        }
-      />
-
-      <EditItemModal
-        isOpen={editModal.isOpen}
-        type={editModal.type}
-        initialData={editModal.initialData}
-        onClose={handleCloseEdit}
-        onSave={handleSaveItem}
-      />
-
-      <ChangeImageModal
-        isOpen={changeImageModal.isOpen}
-        title={changeImageModal.title}
-        currentImageUrl={changeImageModal.currentUrl}
-        onClose={() =>
-          setChangeImageModal({
-            isOpen: false,
-            title: '',
-            currentUrl: '',
-            targetType: null,
-            targetId: null,
-          })
-        }
-        onSaveImage={handleSaveNewImage}
-      />
-
-      <SyncDataModal
-        isOpen={syncModalOpen}
-        onClose={() => setSyncModalOpen(false)}
-        data={data}
-        onImportData={(newData) => updateAndSave(newData)}
-        onResetDefault={handleResetData}
-      />
-
-      {/* Bottom Floating Bar in Edit Mode */}
-      <EditBar
-        isEditMode={isEditMode}
-        onToggleEditMode={() => setIsEditMode(!isEditMode)}
-        onAddUIWork={() => handleOpenEdit('uiWork', null)}
-        onAddCaseStudy={() => handleOpenEdit('caseStudy', null)}
-        onEditProfile={() => handleOpenEdit('profile', data.profile)}
-        onExportData={handleExportData}
-        onImportData={handleImportData}
-        onResetData={handleResetData}
-        onOpenSyncModal={() => setSyncModalOpen(true)}
-        onSaveToCodebase={() => saveToCodebase(data)}
       />
 
     </div>

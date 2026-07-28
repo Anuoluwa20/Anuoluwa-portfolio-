@@ -97,30 +97,43 @@ export const InspectModal: React.FC<InspectModalProps> = ({
           {/* Details & Subtext Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
             {/* Main Title & Subtext */}
-            <div className="md:col-span-2 space-y-3">
-              <h4 className="text-xl font-bold text-neutral-900 leading-snug">
-                {item.title}
-              </h4>
+            <div className="md:col-span-2 space-y-4">
+              <div>
+                <span className="text-[10px] font-bold text-[#8E8E8E] uppercase tracking-widest block mb-1">
+                  01 — Overview & Scope
+                </span>
+                <h4 className="text-xl sm:text-2xl font-serif-heading font-medium text-[#1A1A1A] leading-snug">
+                  {item.title}
+                </h4>
+              </div>
 
               {item.subtext && (
-                <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80 text-xs text-neutral-700 leading-relaxed font-normal">
-                  <span className="font-bold text-neutral-900 block mb-1">Subtext / Overview:</span>
+                <div className="p-4 rounded-2xl bg-[#EFECE6] border border-[#D8D4CC] text-xs text-[#1A1A1A]/90 leading-relaxed font-normal">
+                  <span className="font-bold text-[#1A1A1A] block mb-1 text-[10px] uppercase tracking-wider text-[#8E8E8E]">
+                    02 — Problem & Design Focus
+                  </span>
                   {item.subtext}
                 </div>
               )}
 
               {item.description && (
-                <p className="text-xs text-neutral-600 leading-relaxed">
-                  {item.description}
-                </p>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-bold text-[#8E8E8E] uppercase tracking-widest block">
+                    03 — Solution & Deliverables
+                  </span>
+                  <p className="text-xs text-[#1A1A1A]/80 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               )}
 
               {/* Case study metrics if present */}
               {isCaseStudy && (item as CaseStudy).metrics && (
                 <div className="flex flex-wrap gap-2 pt-2">
                   {(item as CaseStudy).metrics.map((m, idx) => (
-                    <span key={idx} className="px-3 py-1 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-semibold">
-                      ✓ {m}
+                    <span key={idx} className="px-3 py-1 rounded-xl bg-[#EFECE6] text-[#1A1A1A] border border-[#D8D4CC] text-xs font-semibold flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                      {m}
                     </span>
                   ))}
                 </div>
@@ -128,35 +141,35 @@ export const InspectModal: React.FC<InspectModalProps> = ({
             </div>
 
             {/* Sidebar Metadata */}
-            <div className="space-y-4 bg-neutral-50/80 p-4 rounded-2xl border border-neutral-200/80 text-xs">
+            <div className="space-y-4 bg-[#EFECE6] p-5 rounded-2xl border border-[#D8D4CC] text-xs">
               {'client' in item && item.client && (
-                <div className="flex items-center gap-2 text-neutral-700">
-                  <UserCheck className="w-4 h-4 text-neutral-400" />
+                <div className="flex items-center gap-2 text-[#1A1A1A]">
+                  <UserCheck className="w-4 h-4 text-[#8E8E8E]" />
                   <div>
-                    <span className="text-[10px] text-neutral-400 block uppercase font-bold">Client / Project</span>
-                    <span className="font-semibold text-neutral-900">{item.client}</span>
+                    <span className="text-[10px] text-[#8E8E8E] block uppercase font-bold tracking-wider">Client / Project</span>
+                    <span className="font-semibold text-[#1A1A1A]">{item.client}</span>
                   </div>
                 </div>
               )}
 
               {'date' in item && item.date && (
-                <div className="flex items-center gap-2 text-neutral-700">
-                  <Calendar className="w-4 h-4 text-neutral-400" />
+                <div className="flex items-center gap-2 text-[#1A1A1A]">
+                  <Calendar className="w-4 h-4 text-[#8E8E8E]" />
                   <div>
-                    <span className="text-[10px] text-neutral-400 block uppercase font-bold">Year</span>
-                    <span className="font-semibold text-neutral-900">{item.date}</span>
+                    <span className="text-[10px] text-[#8E8E8E] block uppercase font-bold tracking-wider">Year</span>
+                    <span className="font-semibold text-[#1A1A1A]">{item.date}</span>
                   </div>
                 </div>
               )}
 
               {item.tags && item.tags.length > 0 && (
                 <div>
-                  <span className="text-[10px] text-neutral-400 block uppercase font-bold mb-1.5 flex items-center gap-1">
-                    <Tag className="w-3 h-3" /> Tags
+                  <span className="text-[10px] text-[#8E8E8E] block uppercase font-bold mb-1.5 flex items-center gap-1 tracking-wider">
+                    <Tag className="w-3 h-3" /> Focus & Skills
                   </span>
                   <div className="flex flex-wrap gap-1">
                     {item.tags.map((t, idx) => (
-                      <span key={idx} className="px-2 py-0.5 rounded-md bg-white border border-neutral-200 text-[10px] text-neutral-700 font-medium">
+                      <span key={idx} className="px-2 py-1 rounded-md bg-[#F5F2ED] border border-[#D8D4CC] text-[10px] text-[#1A1A1A] font-semibold">
                         {t}
                       </span>
                     ))}
@@ -169,9 +182,9 @@ export const InspectModal: React.FC<InspectModalProps> = ({
                   href={('liveUrl' in item ? item.liveUrl : (item as CaseStudy).caseStudyUrl) || '#'}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-2 w-full py-2 px-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition cursor-pointer"
+                  className="mt-2 w-full py-2.5 px-3 rounded-xl bg-[#1A1A1A] hover:bg-[#333333] text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition cursor-pointer"
                 >
-                  <span>Open Live Link</span>
+                  <span>View Project</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               ) : null}

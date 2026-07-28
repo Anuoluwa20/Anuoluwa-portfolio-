@@ -55,18 +55,18 @@ export const HeroServices: React.FC<HeroServicesProps> = ({
           
           {/* Main Serif Display Title */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif-heading font-normal text-[#1A1A1A] tracking-tight leading-[1.05]">
-            Designing products people <span className="italic font-serif-heading text-neutral-700">love to use.</span>
+            Product Designer crafting <span className="italic font-serif-heading text-neutral-700">intuitive digital experiences.</span>
           </h1>
 
           {/* Descriptive Narrative */}
-          <p className="text-base sm:text-lg text-[#1A1A1A]/80 leading-relaxed font-normal max-w-3xl">
+          <p className="text-base sm:text-lg text-[#1A1A1A]/85 leading-relaxed font-normal max-w-3xl">
             {profile?.subtext ||
-              "I'm Oyebanji Anuoluwapo Eniola, a Product Designer with over 2 years of experience designing digital products across Fintech, Food Delivery, Cybersecurity, Mobility, E-commerce, AI, and EdTech. I transform complex ideas into intuitive digital experiences that balance business goals with user needs."}
+              "I'm Oyebanji Anuoluwapo Eniola, a Product Designer with over 2 years of experience designing web & mobile products across Fintech, SaaS, AI, E-commerce, and Cybersecurity. I bridge user problems, visual elegance, and product strategy to deliver high-impact digital products."}
           </p>
 
           {/* Quick Highlight Pills */}
           <div className="flex flex-wrap items-center gap-2 pt-2">
-            {['Fintech & Wallet Flows', 'E-commerce Ecosystems', 'AI & Security Dashboards', 'Design Systems', 'Developer Handoff'].map((chip, idx) => (
+            {['Product Design', 'UI/UX Design', 'Fintech & SaaS', 'AI & Security Systems', 'Design Systems & Specs'].map((chip, idx) => (
               <span
                 key={idx}
                 className="px-3 py-1 rounded-full bg-[#F5F2ED] text-[#1A1A1A] text-xs font-semibold border border-[#D8D4CC] flex items-center gap-1.5"
@@ -83,7 +83,7 @@ export const HeroServices: React.FC<HeroServicesProps> = ({
               onClick={() => scrollToSection('case-studies')}
               className="px-6 py-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#333333] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md active:scale-95"
             >
-              <span>Explore Selected Projects</span>
+              <span>VIEW MY WORK</span>
               <ArrowDown className="w-4 h-4 text-amber-400" />
             </button>
 
@@ -93,7 +93,7 @@ export const HeroServices: React.FC<HeroServicesProps> = ({
                 className="px-6 py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md active:scale-95"
               >
                 <Calendar className="w-4 h-4 text-neutral-950" />
-                <span>Book a Intro Call</span>
+                <span>LET'S CONNECT</span>
               </button>
             )}
           </div>

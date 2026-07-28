@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Linkedin, MapPin, Sparkles, Send, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Linkedin, MapPin, Sparkles, Send, ArrowUpRight, Calendar } from 'lucide-react';
 import { PortfolioProfile } from '../types';
 
 interface ContactCTAProps {
@@ -9,125 +9,102 @@ interface ContactCTAProps {
 
 export const ContactCTA: React.FC<ContactCTAProps> = ({ profile, onOpenBookCall }) => {
   return (
-    <section id="contact" className="pt-16 pb-12 px-4 max-w-6xl mx-auto">
-      <div className="bg-[#1A1A1A] text-white rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-2xl border border-[#333333]">
+    <section id="contact" className="pt-20 pb-12 px-4 max-w-6xl mx-auto">
+      {/* Clean White End-of-Page Section matching reference screenshot */}
+      <div className="bg-white border border-[#D8D4CC] rounded-3xl p-8 sm:p-16 text-center relative overflow-hidden shadow-sm">
         
-        {/* Subtle Background Glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Centered Profile Avatar */}
+        <div className="relative inline-block mb-4">
+          <img
+            src={profile.avatarUrl}
+            alt={profile.name}
+            referrerPolicy="no-referrer"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover shadow-md mx-auto ring-4 ring-[#EFECE6]"
+          />
+        </div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        {/* Availability Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F2ED] border border-[#D8D4CC] text-xs font-semibold text-[#1A1A1A] mb-6">
+          <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+          <span>Taking bookings for Q3 2026</span>
+        </div>
+
+        {/* Editorial Headline */}
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif-heading font-normal text-[#1A1A1A] tracking-tight leading-tight max-w-3xl mx-auto mb-8">
+          Let's think carefully, move deliberately, and build something distinctive.
+        </h2>
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
+          <button
+            onClick={onOpenBookCall}
+            className="px-6 py-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#333333] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md active:scale-95"
+          >
+            <Calendar className="w-4 h-4 text-amber-400" />
+            <span>Book a call</span>
+          </button>
+
+          <a
+            href={`mailto:${profile.email}`}
+            className="px-6 py-3.5 rounded-full bg-[#EFECE6] hover:bg-[#E5E1D8] text-[#1A1A1A] text-xs font-bold flex items-center gap-2 transition border border-[#D8D4CC]"
+          >
+            <Send className="w-4 h-4 text-amber-700" />
+            <span>Send a Message</span>
+          </a>
+        </div>
+
+        {/* Footer Contact Info Columns Divider */}
+        <div className="pt-10 border-t border-[#D8D4CC]/80 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-left">
           
-          {/* Main Copy */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold uppercase tracking-wider border border-white/10">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Let's Build Something Great</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-5xl font-serif-heading font-medium tracking-tight leading-tight text-white">
-              Have a project in mind? Let's collaborate.
-            </h2>
-
-            <p className="text-sm sm:text-base text-[#8E8E8E] leading-relaxed max-w-xl">
-              I'm always excited to collaborate on products that solve meaningful problems. Whether you're building a startup, improving an existing product, or looking for a Product Designer to join your team, I'd love to hear about your idea.
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <button
-                onClick={onOpenBookCall}
-                className="px-8 py-4 rounded-full bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-sm uppercase tracking-wider flex items-center gap-3 transition cursor-pointer shadow-lg active:scale-95"
-              >
-                <Send className="w-4 h-4 text-neutral-950" />
-                <span>Book a Call / Send Message</span>
-              </button>
-
-              <a
-                href={`mailto:${profile.email}`}
-                className="px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm flex items-center gap-2.5 transition border border-white/20"
-              >
-                <Mail className="w-4 h-4 text-amber-400" />
-                <span>Direct Email</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Direct Contact Cards */}
-          <div className="lg:col-span-5 bg-[#262626] border border-[#333333] rounded-2xl p-6 sm:p-8 space-y-5 shadow-inner">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-amber-400 border-b border-[#333333] pb-3">
-              Direct Channels
-            </h3>
-
-            {/* Email */}
+          {/* Email */}
+          <div>
+            <span className="text-[10px] font-bold text-[#8E8E8E] uppercase tracking-widest block mb-1">
+              SEND AN EMAIL
+            </span>
             <a
               href={`mailto:${profile.email}`}
-              className="flex items-center justify-between p-3.5 rounded-xl bg-[#1A1A1A] hover:bg-[#333333] transition group border border-[#333333]"
+              className="text-xs font-mono font-semibold text-[#1A1A1A] hover:text-amber-800 transition truncate block"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-amber-400/10 text-amber-400 flex items-center justify-center">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-[#8E8E8E] font-bold uppercase">Email</p>
-                  <p className="text-xs font-mono font-medium text-white group-hover:text-amber-300 transition-colors">
-                    {profile.email}
-                  </p>
-                </div>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-[#8E8E8E] group-hover:text-amber-400 transition-colors" />
+              {profile.email}
             </a>
+          </div>
 
-            {/* Phone */}
+          {/* Phone */}
+          <div>
+            <span className="text-[10px] font-bold text-[#8E8E8E] uppercase tracking-widest block mb-1">
+              PHONE NUMBER
+            </span>
             <a
               href="tel:+2347030269759"
-              className="flex items-center justify-between p-3.5 rounded-xl bg-[#1A1A1A] hover:bg-[#333333] transition group border border-[#333333]"
+              className="text-xs font-mono font-semibold text-[#1A1A1A] hover:text-amber-800 transition block"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-emerald-400/10 text-emerald-400 flex items-center justify-center">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-[#8E8E8E] font-bold uppercase">Phone</p>
-                  <p className="text-xs font-mono font-medium text-white group-hover:text-emerald-300 transition-colors">
-                    +234 703 026 9759
-                  </p>
-                </div>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-[#8E8E8E] group-hover:text-emerald-400 transition-colors" />
+              +234 703 026 9759
             </a>
+          </div>
 
-            {/* LinkedIn */}
+          {/* LinkedIn */}
+          <div>
+            <span className="text-[10px] font-bold text-[#8E8E8E] uppercase tracking-widest block mb-1">
+              LINKEDIN
+            </span>
             <a
               href={profile.linkedinUrl || "https://linkedin.com/in/oyebanji-anuoluwapo-163a62307"}
               target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-3.5 rounded-xl bg-[#1A1A1A] hover:bg-[#333333] transition group border border-[#333333]"
+              rel="noreferrer"
+              className="text-xs font-mono font-semibold text-[#1A1A1A] hover:text-amber-800 transition truncate block"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-blue-400/10 text-blue-400 flex items-center justify-center">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-[#8E8E8E] font-bold uppercase">LinkedIn</p>
-                  <p className="text-xs font-mono font-medium text-white group-hover:text-blue-300 transition-colors">
-                    oyebanji-anuoluwapo
-                  </p>
-                </div>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-[#8E8E8E] group-hover:text-blue-400 transition-colors" />
+              oyebanji-anuoluwapo
             </a>
+          </div>
 
-            {/* Location */}
-            <div className="flex items-center gap-3 p-3.5 rounded-xl bg-[#1A1A1A] border border-[#333333]">
-              <div className="w-9 h-9 rounded-lg bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0">
-                <MapPin className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-[10px] text-[#8E8E8E] font-bold uppercase">Location</p>
-                <p className="text-xs text-white/90">Osun State, Nigeria (Open to Remote Opportunities)</p>
-              </div>
-            </div>
-
+          {/* Location */}
+          <div>
+            <span className="text-[10px] font-bold text-[#8E8E8E] uppercase tracking-widest block mb-1">
+              LOCATION
+            </span>
+            <span className="text-xs font-mono font-semibold text-[#1A1A1A] block">
+              Nigeria (Remote)
+            </span>
           </div>
 
         </div>

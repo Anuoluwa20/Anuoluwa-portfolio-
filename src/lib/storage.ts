@@ -28,19 +28,41 @@ function getDB() {
 
 function sanitizeData(parsed: PortfolioData): PortfolioData {
   if (!parsed) return defaultPortfolioData;
-  const removedIds = new Set(['cs_5', 'cs_7', 'ui_5', 'ui_7', 'ui_8', 'cs_travel', 'cs_onboarding', 'ui_travel', 'ui_onboarding']);
+  const removedIds = new Set(['cs_4', 'cs_5', 'cs_7', 'ui_4', 'ui_5', 'ui_7', 'ui_8', 'cs_travel', 'cs_onboarding', 'ui_travel', 'ui_onboarding']);
   if (parsed.caseStudies) {
     parsed.caseStudies = parsed.caseStudies.filter(
-      (c) => !removedIds.has(c.id) && !c.title.includes('CBT') && !c.title.includes("Children's Coding") && !c.title.includes('Wanderlust') && !c.title.includes('QuickTask')
+      (c) => !removedIds.has(c.id) && !c.title.includes('CBT') && !c.title.includes("Children's Coding")
     );
+    ['cs_1', 'cs_2', 'cs_glance', 'cs_world_builder', 'cs_wander', 'cs_wealth', 'cs_quicktask', 'cs_ecommerce', 'cs_healthcare', 'cs_mindai', 'cs_eventconnect', 'cs_ai_assistant', 'cs_6'].forEach((id) => {
+      const target = defaultPortfolioData.caseStudies.find((c) => c.id === id);
+      if (target) {
+        const idx = parsed.caseStudies.findIndex((c) => c.id === id);
+        if (idx !== -1) {
+          parsed.caseStudies[idx] = { ...parsed.caseStudies[idx], ...target };
+        } else {
+          parsed.caseStudies.push(target);
+        }
+      }
+    });
   } else {
     parsed.caseStudies = defaultPortfolioData.caseStudies;
   }
 
   if (parsed.uiWorks) {
     parsed.uiWorks = parsed.uiWorks.filter(
-      (u) => !removedIds.has(u.id) && !u.title.includes('CBT Exam') && !u.title.includes("Children's Gamified") && !u.title.includes('QuickByte Vendor & Admin') && !u.title.includes('Wanderlust') && !u.title.includes('QuickTask')
+      (u) => !removedIds.has(u.id) && !u.title.includes('CBT Exam') && !u.title.includes("Children's Gamified") && !u.title.includes('QuickByte Vendor & Admin')
     );
+    ['ui_1', 'ui_2', 'ui_glance', 'ui_eventconnect', 'ui_mindai', 'ui_wander', 'ui_wealth', 'ui_quicktask', 'ui_ecommerce', 'ui_healthcare', 'ui_world_builder', 'ui_ai_assistant', 'ui_6'].forEach((id) => {
+      const target = defaultPortfolioData.uiWorks.find((u) => u.id === id);
+      if (target) {
+        const idx = parsed.uiWorks.findIndex((u) => u.id === id);
+        if (idx !== -1) {
+          parsed.uiWorks[idx] = { ...parsed.uiWorks[idx], ...target };
+        } else {
+          parsed.uiWorks.push(target);
+        }
+      }
+    });
   } else {
     parsed.uiWorks = defaultPortfolioData.uiWorks;
   }
@@ -52,6 +74,7 @@ function sanitizeData(parsed: PortfolioData): PortfolioData {
     if (!parsed.profile.linkedinUrl) {
       parsed.profile.linkedinUrl = 'https://linkedin.com/in/oyebanji-anuoluwapo-163a62307';
     }
+    parsed.profile.avatarUrl = defaultPortfolioData.profile.avatarUrl;
   }
   return parsed;
 }

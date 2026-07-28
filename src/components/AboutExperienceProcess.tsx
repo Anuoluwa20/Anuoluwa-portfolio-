@@ -24,74 +24,231 @@ const EXPERIENCES = [
   {
     company: 'QuickByte Food Delivery',
     role: 'Product Designer',
-    period: 'March 2026 – Present',
-    industry: 'FoodTech & E-commerce',
+    period: '2026',
+    industry: 'UI/UX Design · Product Design · Mobile App Design',
     description:
-      'QuickByte is a comprehensive food delivery platform connecting customers, restaurants, and administrators through an intuitive digital ecosystem.',
+      'QuickByte is a fast, convenient food delivery app designed to make ordering meals simple, seamless, and enjoyable.',
     responsibilities: [
-      'Designed the complete ordering journey from restaurant discovery to checkout.',
-      'Created customer, vendor, and admin dashboards with real-time analytics.',
-      'Designed wallet and digital payment experiences.',
-      'Built a scalable design system for web and mobile platforms.',
-      'Created interactive prototypes and collaborated closely with developers throughout implementation.',
+      'QuickByte is a food delivery experience designed for people who want to discover meals, order quickly, and manage their food purchases with ease.',
+      'Designed the product experience around simple navigation, effortless ordering, and a smooth checkout journey.',
+      'Created a visual system that feels modern, bold, and engaging.',
     ],
     keyFeatures: [
-      'Restaurant Discovery',
-      'Order Tracking',
-      'Wallet & Payouts',
-      'Vendor Dashboard',
-      'Admin Console',
-      'Personalized Recommendations',
+      'Simple Navigation',
+      'Effortless Ordering',
+      'Smooth Checkout',
+      'Modern & Bold Visual System',
+      'Food Discovery',
     ],
   },
   {
-    company: 'Tap Ontime Payment',
+    company: 'One Tap — Frictionless Payment Platform',
+    role: 'Lead Product Designer',
+    period: '2026',
+    industry: 'Fintech / Payment Product',
+    description:
+      'One Tap is a fast and secure payment solution that lets businesses accept seamless one-time payments with just a tap.',
+    responsibilities: [
+      'One Tap is a payment solution designed to make transactions faster, simpler, and more secure for businesses and their customers.',
+      'Designed the product experience with a strong focus on simplicity, speed, trust, and ease of use.',
+      'Worked across the user journey to create intuitive payment flows and a clean interface that makes completing transactions feel effortless.',
+    ],
+    outcome:
+      'Engineered an effortless, high-trust payment experience allowing users to complete transactions quickly without checkout friction.',
+    keyFeatures: ['One-Time Payments', 'Payment Experience', 'User Flows', 'Interaction Design', 'Simplicity & Speed'],
+  },
+  {
+    company: 'Glance Captions — UI Recreation',
     role: 'Product Designer',
     period: '2026',
-    industry: 'Fintech',
+    industry: 'UI Recreation / Design Exploration',
     description:
-      'Tap Ontime Payment is a fintech platform focused on making digital payments secure, simple, and reliable.',
+      'A UI recreation of Glance Captions, exploring its interface, visual language, and user experience through a hands-on design exercise.',
     responsibilities: [
-      'Designed secure payment flows and zero-friction transfer journeys.',
-      'Created wallet funding, balance summaries, and transaction history logs.',
-      'Designed biometrics authentication flows and QR payment confirmation.',
-      'Built responsive interfaces and reusable design system components.',
+      'Recreated key parts of the Glance Captions interface to study typography, spacing, and component structure.',
+      'Analysed interaction patterns, visual hierarchy, and usability flow across mobile light mode screens.',
+      'Strengthened systematic UI translation capabilities for complex app interfaces.',
     ],
     outcome:
-      'Developed a frictionless payment experience focused on speed, trust, and usability across desktop and mobile.',
-    keyFeatures: ['Money Transfer', 'Wallet', 'Transaction History', 'Authentication', 'QR Payments'],
+      'Produced a high-fidelity mobile UI recreation that dissects Glance Captions’ design system and layout architecture.',
+    keyFeatures: ['UI Design', 'Visual Design', 'Interaction Design', 'Design Systems', 'Mobile Screens'],
   },
   {
-    company: 'VulnWatch AI',
+    company: 'World Builder — Story & World-Building Platform',
     role: 'Product Designer',
-    period: 'April 2026',
-    industry: 'Cybersecurity & AI',
+    period: '2026',
+    industry: 'Creative / World-Building Platform',
     description:
-      'VulnWatch AI is an AI-powered cybersecurity platform that enables businesses to scan websites and web applications for security vulnerabilities.',
+      'World Builder helps creatives and authors organize complex stories, connect ideas, and keep track of characters, timelines, and storylines without losing the bigger picture.',
     responsibilities: [
-      'Designed website vulnerability scanning experience and threat dashboards.',
-      'Created intuitive vulnerability reports, security scores, and remediation workflows.',
-      'Built reusable UI components for complex security metric visualizers.',
+      'Gave creatives a structured space to build and organize fictional worlds, connect characters, and map out timelines.',
+      'Designed intuitive node diagrams, timeline event forms, faction dashboards, and lore documentation interfaces.',
+      'Focused on simplifying complex narrative information architecture into approachable web interactions.',
     ],
     outcome:
-      'Simplified complex cybersecurity information into an easy-to-understand experience that enables organizations to identify and resolve security issues efficiently.',
-    keyFeatures: ['Website Scanner', 'Security Dashboard', 'Risk Scores', 'Vulnerability Reports', 'Remediation Workflows'],
+      'Engineered an intuitive creative workspace that enables authors to seamlessly connect complex narrative elements.',
+    keyFeatures: ['World Building', 'Character Graphs', 'Timeline Events', 'Faction Dashboards', 'Lore Documentation'],
   },
   {
-    company: 'Xtreeq Campus Transit',
+    company: 'Wander — Travel Discovery & Planning App',
     role: 'Product Designer',
-    period: 'April 2026',
-    industry: 'Mobility & Transportation',
+    period: '2026',
+    industry: 'Travel Tech & Mobile App',
     description:
-      'Xtreeq is a campus mobility platform that simplifies transportation for students through digital booking and cashless payments.',
+      'A travel app designed to help users discover destinations, explore curated experiences, find places to stay, and plan trips seamlessly in one place.',
     responsibilities: [
-      'Designed ride booking experience and student wallet funding flow.',
-      'Designed contactless QR ticketing, trip history, and real-time shuttle tracking.',
-      'Created responsive interfaces and improved campus commuting usability.',
+      'Designed end-to-end travel discovery flows from destination search to stay bookings.',
+      'Created interactive itinerary cards, search filters, and trip management tools.',
+      'Focused on high-impact visual presentation and intuitive mobile travel navigation.',
     ],
     outcome:
-      'Delivered a streamlined transportation experience that reduced booking friction and simplified campus commuting.',
-    keyFeatures: ['Ride Booking', 'Wallet Funding', 'QR Tickets', 'Trip History', 'Real-time Tracking'],
+      'Delivered a comprehensive travel discovery app interface that streamlines itinerary planning and booking.',
+    keyFeatures: ['Travel Discovery', 'Itinerary Planning', 'Stay Bookings', 'Destination Search', 'Mobile UX'],
+  },
+  {
+    company: 'Wealth — Personal Finance & Investment App',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'Fintech & Personal Finance',
+    description:
+      'A personal finance app designed to help users track their net worth, manage assets, understand their portfolio, and gain financial insights through a simple and intuitive experience.',
+    responsibilities: [
+      'Designed net worth dashboards, asset allocation donut charts, and portfolio analytics.',
+      'Created AI financial insights, personalized tips, and goal tracking interfaces.',
+      'Transformed complex personal financial metrics into clear, visual mobile cards.',
+    ],
+    outcome:
+      'Built a clear, high-trust financial dashboard empowering users to monitor wealth and asset distribution effortlessly.',
+    keyFeatures: ['Net Worth Tracking', 'Asset Breakdown', 'Portfolio Mix', 'Financial Insights', 'Fintech UI'],
+  },
+  {
+    company: 'QuickTask — Smart Reminder & Productivity App',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'Productivity & Mobile App',
+    description:
+      'A productivity app designed to help users stay organized by managing tasks, schedules, and payment reminders in one simple and intuitive experience.',
+    responsibilities: [
+      'Designed payment reminder widgets, scheduled task cards, and outing calendar timelines.',
+      'Created onboarding screens and frictionless task creation workflows.',
+      'Focused on reducing cognitive clutter and keeping users punctual on financial and daily commitments.',
+    ],
+    outcome:
+      'Engineered a clean mobile productivity interface that unifies payment deadlines and daily scheduling.',
+    keyFeatures: ['Payment Reminders', 'Task Schedules', 'Outing Calendar', 'Productivity UI', 'Onboarding Flows'],
+  },
+  {
+    company: 'E-commerce Shopping App — Mobile Experience',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'E-commerce & Mobile App',
+    description:
+      'A mobile shopping experience designed to help users discover products, explore categories, view detailed product information, manage their cart, and complete purchases with minimal friction.',
+    responsibilities: [
+      'Focused on creating a clean and intuitive shopping journey from initial discovery to checkout.',
+      'Designed product browsing, category navigation, detailed item specs, and interactive cart flows.',
+      'Optimized micro-interactions and mobile layout hierarchy to make shopping visual and effortless.',
+    ],
+    outcome:
+      'Delivered a polished mobile shopping UI with a frictionless checkout and cart experience.',
+    keyFeatures: ['Product Discovery', 'Category Navigation', 'Item Details', 'Cart UI', 'Frictionless Checkout'],
+  },
+  {
+    company: 'Healthcare Management Dashboard — Practice Platform',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'Healthcare / SaaS Dashboard',
+    description:
+      'A healthcare management dashboard designed to help medical professionals efficiently manage appointments, patients, schedules, and practice operations in one place.',
+    responsibilities: [
+      'Centralized medical appointments, patient records, practice schedules, reminders, and activity reports.',
+      'Transformed complex healthcare information into clear, scannable data visualizations and medical calendar workflows.',
+      'Designed dashboard navigation and key clinic administration workflows with high clarity and usability.',
+    ],
+    outcome:
+      'Engineered an intuitive SaaS practice management dashboard that streamlines day-to-day medical clinic operations.',
+    keyFeatures: ['Appointment Calendar', 'Patient Records', 'Practice Analytics', 'Medical UX', 'Design Systems'],
+  },
+  {
+    company: 'MindAI — Conversational AI Assistant',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'AI & Mobile Application',
+    description:
+      'An AI assistant designed to provide users with a simple, conversational space to ask questions, share thoughts, and get helpful responses through an intuitive chat experience.',
+    responsibilities: [
+      'Focused on designing a conversational experience that feels clear, human, and lightweight to navigate.',
+      'Worked on chat flows, message state indicators, input bar micro-interactions, and message feedback actions (like/dislike/copy).',
+      'Designed a smooth mobile experience from starting a conversation to receiving AI responses.',
+    ],
+    outcome:
+      'Delivered a friendly, intuitive mobile conversational interface that simplifies AI interaction.',
+    keyFeatures: ['Conversational UX', 'AI Assistant', 'Mobile Chat UI', 'Message Feedback', 'Interaction Design'],
+  },
+  {
+    company: 'EventConnect — Event Discovery & Social Platform',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'Social / Event Platform',
+    description:
+      'EventConnect is designed to make it easier for people to find events they care about, connect with like-minded people, and stay engaged before, during, and after an event.',
+    responsibilities: [
+      'Brought event discovery and social connections together into one seamless mobile experience.',
+      'Designed attendee connection lists, 1-on-1 direct messaging flows, and chat inbox interfaces.',
+      'Focused on discovery, community building, and friction-free interactions for upcoming activities.',
+    ],
+    outcome:
+      'Created a vibrant social event platform that enables users to transition seamlessly from discovering events to joining active communities.',
+    keyFeatures: ['Event Discovery', 'Social UX', 'Attendee Connections', '1-on-1 Chat', 'Community Platform'],
+  },
+  {
+    company: 'AI Assistant — Landing Page',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'Landing Page / Web Design',
+    description:
+      'An AI assistant landing page designed to showcase a smart, intuitive, and conversational AI experience through a clean and modern interface.',
+    responsibilities: [
+      'Built a modern landing page concept for an AI assistant to communicate product capabilities.',
+      'Designed approachable, intelligent, and easy-to-understand conversational AI showcase components.',
+      'Established a strong visual hierarchy, clear messaging, engaging interactions, and a polished web interface.',
+    ],
+    outcome:
+      'Created an engaging web landing page experience that guides visitors seamlessly from product discovery to value comprehension.',
+    keyFeatures: ['AI Landing Page', 'Web Design', 'Visual Hierarchy', 'Conversational AI UI', 'Interaction Design'],
+  },
+  {
+    company: 'VulnWatch — Cybersecurity Vulnerability Scanning Platform',
+    role: 'Lead Product Designer',
+    period: '2026',
+    industry: 'Cybersecurity / SaaS',
+    description:
+      'VulnWatch is a cybersecurity platform designed to make website security more accessible to businesses and individuals. Users can scan their domains to identify vulnerabilities, security weaknesses, and potential risks across their digital infrastructure.',
+    responsibilities: [
+      'Focused on turning a technically complex security process into an experience that feels clear, trustworthy, and easy to understand.',
+      'Designed core user flows, domain scanning experience, vulnerability reports, security compliance export UI, and dashboard.',
+      'Helped users quickly understand what is wrong, how serious the issue is, and what needs attention.',
+    ],
+    outcome:
+      'Transformed complex cybersecurity technical data into an intuitive SaaS dashboard that empowers users to configure and export compliance reports effortlessly.',
+    keyFeatures: ['Cybersecurity', 'SaaS Dashboard', 'Security UX', 'Data Visualization', 'Vulnerability Reports', 'User Flows'],
+  },
+
+  {
+    company: 'Jiji Marketplace — UX/UI Redesign',
+    role: 'Product Designer',
+    period: '2026',
+    industry: 'UI/UX Redesign · E-commerce & Marketplace',
+    description:
+      'I redesigned the Jiji marketplace experience to address areas where the existing interface felt visually crowded and difficult to navigate, focusing on visual hierarchy, product discovery, and filtering.',
+    responsibilities: [
+      'Reworked product listing layouts, navigation, search experience, filters, product cards, and information hierarchy.',
+      'Designed a cleaner, more organized marketplace interface while preserving familiar core functionality.',
+      'Improved product discovery and listing comparison speed for shoppers.',
+    ],
+    outcome:
+      'Created a modernized marketplace experience that eliminates visual clutter and streamlines search and filtering.',
+    keyFeatures: ['UX/UI Redesign', 'Visual Hierarchy', 'Product Discovery', 'Filtering Systems', 'Marketplace UI'],
   },
 ];
 
@@ -166,7 +323,7 @@ export const AboutExperienceProcess: React.FC<AboutExperienceProcessProps> = ({
             <div className="pt-6 border-t border-[#D8D4CC] flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#1A1A1A]">
                 <MapPin className="w-4 h-4 text-amber-600" />
-                <span>Osun State, Nigeria (Open to Remote Opportunities)</span>
+                <span>Nigeria (Open to Remote Opportunities)</span>
               </div>
 
               {onOpenBookCall && (
@@ -201,7 +358,7 @@ export const AboutExperienceProcess: React.FC<AboutExperienceProcessProps> = ({
             {/* Quick Contact Badge */}
             <div className="pt-6 border-t border-[#333333] space-y-2">
               <p className="text-[11px] uppercase tracking-wider text-[#8E8E8E] font-bold">Contact Direct</p>
-              <p className="text-xs font-mono text-amber-300 select-all">anuoluwaoyebanjo20@gmail.com</p>
+              <p className="text-xs font-mono text-amber-300 select-all">anuoluwaoyebanji20@gmail.com</p>
               <p className="text-xs font-mono text-white/80">+234 703 026 9759</p>
             </div>
           </div>
@@ -209,116 +366,48 @@ export const AboutExperienceProcess: React.FC<AboutExperienceProcessProps> = ({
         </div>
       </section>
 
-      {/* SECTION 2: PROFESSIONAL EXPERIENCE TIMELINE */}
-      <section id="experience" className="space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <p className="micro-label">Career Journey</p>
-          <h2 className="text-3xl sm:text-5xl font-serif-heading font-medium text-[#1A1A1A] tracking-tight">
-            Professional Experience
+      {/* SECTION 2: DESIGN EXPERIENCE LIST (Matching reference screenshot) */}
+      <section id="experience" className="space-y-8 py-8">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-serif-heading font-normal text-[#1A1A1A] tracking-tight">
+            Design Experience
           </h2>
-          <p className="text-sm text-[#8E8E8E]">
-            Over 2 years of hands-on product design across diverse tech ecosystems.
-          </p>
         </div>
 
-        {/* Experience Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Timeline Selector Tabs (Left) */}
-          <div className="lg:col-span-4 space-y-3">
-            {EXPERIENCES.map((exp, idx) => (
-              <button
+        {/* Single Clean Table Container matching screenshot */}
+        <div className="bg-[#EFECE6] border border-[#D8D4CC] rounded-3xl p-4 sm:p-6 shadow-sm max-w-2xl mx-auto space-y-1">
+          {EXPERIENCES.map((exp, idx) => {
+            // Get first letter of company name for icon badge
+            const initial = exp.company.charAt(0);
+            return (
+              <div
                 key={idx}
-                onClick={() => setActiveExpIndex(idx)}
-                className={`w-full text-left p-5 rounded-2xl border transition-all cursor-pointer flex flex-col gap-1 ${
-                  activeExpIndex === idx
-                    ? 'bg-[#1A1A1A] text-white border-[#1A1A1A] shadow-md scale-[1.02]'
-                    : 'bg-[#EFECE6] hover:bg-[#E5E1D8] border-[#D8D4CC] text-[#1A1A1A]'
-                }`}
+                className="flex items-center justify-between py-3.5 px-4 rounded-2xl hover:bg-[#E5E1D8]/70 transition-colors border-b border-[#D8D4CC]/60 last:border-b-0 group"
               >
-                <div className="flex items-center justify-between">
-                  <span className={`text-[10px] font-bold uppercase tracking-wider ${
-                    activeExpIndex === idx ? 'text-amber-400' : 'text-[#8E8E8E]'
-                  }`}>
-                    {exp.period}
-                  </span>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full ${
-                    activeExpIndex === idx ? 'bg-white/10 text-white' : 'bg-[#F5F2ED] text-[#1A1A1A]'
-                  }`}>
-                    {exp.industry}
-                  </span>
+                {/* Left: Logo Badge + Company Name + Role Title */}
+                <div className="flex items-center gap-3 min-w-0 pr-4">
+                  <div className="w-8 h-8 rounded-lg bg-[#1A1A1A] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                    {initial}
+                  </div>
+                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 min-w-0">
+                    <span className="text-xs sm:text-sm font-bold text-[#1A1A1A] tracking-tight truncate">
+                      {exp.company}
+                    </span>
+                    <span className="text-[11px] font-medium text-[#8E8E8E] truncate">
+                      {exp.role}
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="text-base font-bold leading-tight mt-1">{exp.company}</h3>
-                <p className={`text-xs ${activeExpIndex === idx ? 'text-[#8E8E8E]' : 'text-[#8E8E8E]'}`}>
-                  {exp.role}
-                </p>
-              </button>
-            ))}
-          </div>
-
-          {/* Detailed Experience View (Right) */}
-          <div className="lg:col-span-8 bg-[#EFECE6] border border-[#D8D4CC] rounded-3xl p-8 space-y-6">
-            {(() => {
-              const exp = EXPERIENCES[activeExpIndex];
-              return (
-                <>
-                  <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#D8D4CC]">
-                    <div>
-                      <span className="micro-label text-amber-700">{exp.industry}</span>
-                      <h3 className="text-2xl font-serif-heading font-medium text-[#1A1A1A] mt-1">{exp.company}</h3>
-                      <p className="text-xs text-[#8E8E8E] font-semibold">{exp.role} • {exp.period}</p>
-                    </div>
-
-                    <div className="px-3 py-1.5 rounded-full bg-[#F5F2ED] border border-[#D8D4CC] text-xs font-bold text-[#1A1A1A]">
-                      Active Record
-                    </div>
-                  </div>
-
-                  <p className="text-sm text-[#1A1A1A] font-normal leading-relaxed">
-                    {exp.description}
-                  </p>
-
-                  {/* Responsibilities */}
-                  <div className="space-y-3">
-                    <h4 className="micro-label">Key Responsibilities</h4>
-                    <ul className="space-y-2">
-                      {exp.responsibilities.map((resp, rIdx) => (
-                        <li key={rIdx} className="flex items-start gap-2.5 text-xs text-[#1A1A1A]">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                          <span>{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Outcome if available */}
-                  {exp.outcome && (
-                    <div className="p-4 bg-[#F5F2ED] rounded-2xl border border-[#D8D4CC] space-y-1">
-                      <p className="micro-label text-amber-800">Impact & Outcome</p>
-                      <p className="text-xs text-[#1A1A1A] font-medium leading-relaxed">{exp.outcome}</p>
-                    </div>
-                  )}
-
-                  {/* Feature Chips */}
-                  <div className="pt-4 border-t border-[#D8D4CC]/80 space-y-2">
-                    <p className="micro-label">Core Modules Designed</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {exp.keyFeatures.map((feat, fIdx) => (
-                        <span
-                          key={fIdx}
-                          className="px-3 py-1 rounded-full bg-[#F5F2ED] border border-[#D8D4CC] text-[10px] font-bold uppercase tracking-wider text-[#1A1A1A]"
-                        >
-                          {feat}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </>
-              );
-            })()}
-          </div>
-
+                {/* Right: Period / Date Range */}
+                <div className="shrink-0 text-right">
+                  <span className="text-[11px] sm:text-xs font-mono font-medium text-[#1A1A1A]/80">
+                    {exp.period}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
