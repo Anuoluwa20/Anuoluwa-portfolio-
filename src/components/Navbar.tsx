@@ -183,13 +183,25 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => scrollToSection('about')}
             className="text-left py-2 px-3 rounded-lg hover:bg-neutral-100 text-sm font-medium text-neutral-800"
           >
-            Tools & About
+            About & Tools
+          </button>
+          <button
+            onClick={() => scrollToSection('experience')}
+            className="text-left py-2 px-3 rounded-lg hover:bg-neutral-100 text-sm font-medium text-neutral-800"
+          >
+            Design Experience
+          </button>
+          <button
+            onClick={() => scrollToSection('process')}
+            className="text-left py-2 px-3 rounded-lg hover:bg-neutral-100 text-sm font-medium text-neutral-800"
+          >
+            Design Process
           </button>
           <button
             onClick={() => scrollToSection('contact')}
             className="text-left py-2 px-3 rounded-lg hover:bg-neutral-100 text-sm font-medium text-neutral-800"
           >
-            Contact & Testimonials
+            Contact
           </button>
           <div className="pt-2 border-t border-neutral-100 flex items-center gap-3">
             {profile.twitterUrl && (

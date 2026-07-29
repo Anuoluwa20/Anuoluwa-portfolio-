@@ -46,7 +46,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1A1A1A]/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-[#F5F2ED] rounded-3xl shadow-2xl border border-[#D8D4CC] overflow-hidden">
+      <div className="relative w-full max-w-lg bg-[#F5F2ED] rounded-3xl shadow-2xl border border-[#D8D4CC] overflow-hidden max-h-[90vh] flex flex-col">
         
         {/* Header */}
         <div className="p-6 bg-[#1A1A1A] text-white flex items-center justify-between">
@@ -68,7 +68,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-6 overflow-y-auto">
           {submitted ? (
             <div className="text-center py-8">
               <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
