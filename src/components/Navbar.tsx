@@ -140,13 +140,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Book a Call Primary Button */}
-          <button
-            onClick={onOpenBookCall}
+          <a
+            href={profile.bookCallUrl || "https://cal.com/oyebanji-anuoluwa-ivsr2j/15min"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-semibold flex items-center gap-2 transition cursor-pointer shadow-sm active:scale-95"
           >
             <Calendar className="w-3.5 h-3.5 text-amber-400" />
             <span>Book a call</span>
-          </button>
+          </a>
 
           {/* Mobile Menu Toggle */}
           <button

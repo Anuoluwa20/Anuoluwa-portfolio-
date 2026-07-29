@@ -87,15 +87,15 @@ export const HeroServices: React.FC<HeroServicesProps> = ({
               <ArrowDown className="w-4 h-4 text-amber-400" />
             </button>
 
-            {onOpenBookCall && (
-              <button
-                onClick={onOpenBookCall}
-                className="px-6 py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md active:scale-95"
-              >
-                <Calendar className="w-4 h-4 text-neutral-950" />
-                <span>LET'S CONNECT</span>
-              </button>
-            )}
+            <a
+              href={profile?.bookCallUrl || "https://cal.com/oyebanji-anuoluwa-ivsr2j/15min"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md active:scale-95"
+            >
+              <Calendar className="w-4 h-4 text-neutral-950" />
+              <span>LET'S CONNECT / BOOK A CALL</span>
+            </a>
           </div>
 
         </div>

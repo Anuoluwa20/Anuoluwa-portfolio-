@@ -19,7 +19,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
     name: '',
     email: '',
     serviceType: 'Product Design (SaaS & Mobile)',
-    budget: '$3k - $5k',
+    budget: '',
     date: '',
     time: '10:00 AM',
     message: '',
@@ -140,18 +140,18 @@ export const ContactModal: React.FC<ContactModalProps> = ({
 
                 <div>
                   <label className="block text-xs font-bold text-neutral-700 mb-1">
-                    Est. Budget Range
+                    Custom Budget / Price ($)
                   </label>
-                  <select
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 text-xs text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900"
-                  >
-                    <option value="< $3k">&lt; $3,000</option>
-                    <option value="$3k - $5k">$3,000 - $5,000</option>
-                    <option value="$5k - $10k">$5,000 - $10,000</option>
-                    <option value="$10k+">$10,000+</option>
-                  </select>
+                  <div className="relative">
+                    <span className="text-neutral-400 text-xs font-bold absolute left-3 top-1/2 -translate-y-1/2">$</span>
+                    <input
+                      type="text"
+                      placeholder="e.g. 2,500 or Flexible"
+                      value={formData.budget}
+                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                      className="w-full pl-7 pr-3 py-2.5 rounded-xl border border-neutral-200 text-xs text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900"
+                    />
+                  </div>
                 </div>
               </div>
 

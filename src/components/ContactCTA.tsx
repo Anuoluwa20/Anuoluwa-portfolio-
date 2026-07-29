@@ -36,13 +36,15 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({ profile, onOpenBookCall 
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
-          <button
-            onClick={onOpenBookCall}
+          <a
+            href={profile.bookCallUrl || "https://cal.com/oyebanji-anuoluwapo-ivsr2j/15min"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3.5 rounded-full bg-[#1A1A1A] hover:bg-[#333333] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md active:scale-95"
           >
             <Calendar className="w-4 h-4 text-amber-400" />
             <span>Book a call</span>
-          </button>
+          </a>
 
           <a
             href={`mailto:${profile.email}`}

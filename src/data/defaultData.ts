@@ -10,7 +10,7 @@ export const defaultPortfolioData: PortfolioData = {
     email: 'anuoluwaoyebanji20@gmail.com',
     twitterUrl: 'https://x.com/OyebanjiAnu12',
     linkedinUrl: 'https://linkedin.com/in/oyebanji-anuoluwapo-163a62307',
-    bookCallUrl: 'mailto:anuoluwaoyebanji20@gmail.com',
+    bookCallUrl: 'https://cal.com/oyebanji-anuoluwa-ivsr2j/15min',
     availableForHire: true,
   },
   services: [
